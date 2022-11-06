@@ -64,7 +64,7 @@ bindsym $mod+c exec --no-startup-id nm-connection-editor
 # Run applications
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+i exec --no-startup-id lxappearance
-bindsym $mod+v exec --no-startup-id vsc
+bindsym $mod+n exec --no-startup-id vsc
 bindsym $mod+p exec --no-startup-id pavucontrol
 
 # change focus
