@@ -11,3 +11,7 @@ Section "InputClass"
 	Option "AccelSpeed" "-1"
 EndSection
 ```
+
+## Desktop Menu
+
+[j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop)
