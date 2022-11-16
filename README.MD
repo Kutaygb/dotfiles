@@ -15,3 +15,7 @@ EndSection
 ## Desktop Menu
 
 [j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop)
+
+## Picom Version
+
+[Picom](https://github.com/yshui/picom)
