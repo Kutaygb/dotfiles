@@ -119,17 +119,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-## Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
-
-## Clipboard Screenshots
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 #background
-exec --no-startup-id feh --bg-scale /home/kutay/Pictures/bg.jpg
+exec --no-startup-id nitrogen
 #Screen
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 #picom
@@ -240,4 +231,3 @@ bar {
   }
   status_command i3status
 }
-
