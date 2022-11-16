@@ -132,6 +132,8 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 exec --no-startup-id feh --bg-scale /home/kutay/Pictures/bg.jpg
 #Screen
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
+#picom
+exec --no-startup-id picom
 #i3 Remove Borders
 default_border pixel 1
 default_floating_border pixel 1
