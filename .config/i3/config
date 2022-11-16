@@ -137,7 +137,11 @@ exec --no-startup-id picom
 #i3 Remove Borders
 default_border pixel 1
 default_floating_border pixel 1
-
+hide_edge_borders smart
+#gaps
+gaps inner 8
+gaps outer 8
+smart_gaps on
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
