@@ -66,7 +66,7 @@ bindsym $mod+c exec --no-startup-id nm-connection-editor
 # Run applications
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+i exec --no-startup-id lxappearance
-bindsym $mod+n exec --no-startup-id vsc
+bindsym $mod+n exec --no-startup-id code
 bindsym $mod+p exec --no-startup-id pavucontrol
 
 # change focus
@@ -120,7 +120,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #background
-exec --no-startup-id nitrogen
+feh --bg-fill ~/Pictures/bg2.png
 #Screen
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 #picom
