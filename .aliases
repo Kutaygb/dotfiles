@@ -6,7 +6,7 @@ alias confi="nvim ~/.config/i3/config"
 alias s="sudo"
 alias frb="reboot --force"
 alias hc="history -c"
-alias bye="shutdown -r now"
+alias bye="shutdown -h now"
 
 #other
 alias al="echo ------------Your curent aliases are:------------¡';alias"
