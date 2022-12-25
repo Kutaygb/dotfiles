@@ -119,8 +119,8 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-#background
-feh --bg-fill ~/Pictures/bg2.png
+# background
+exec --no-startup-id feh --fill --bg-scale "$HOME/Pictures/bg/bg39.jpg"
 #Screen
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 #picom
