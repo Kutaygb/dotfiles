@@ -9,5 +9,4 @@ alias hc="history -c"
 alias bye="shutdown -h now"
 
 #other
-alias al="echo ------------Your curent aliases are:------------¡';alias"
 alias ydl='youtube-dl -f "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]" '

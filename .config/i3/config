@@ -68,6 +68,7 @@ bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+i exec --no-startup-id lxappearance
 bindsym $mod+n exec --no-startup-id code
 bindsym $mod+p exec --no-startup-id pavucontrol
+bindsym Print exec --no-startup-id flameshot gui
 
 # change focus
 bindsym $mod+j focus left
