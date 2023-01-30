@@ -120,6 +120,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+bindsym $mod+l i3lock -c 000000 --inside-color 000000 --ring-color 242624
 # background
 exec --no-startup-id feh --fill --bg-scale "$HOME/Pictures/bg/bg39.jpg"
 #Screen
