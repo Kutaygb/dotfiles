@@ -120,13 +120,15 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-bindsym $mod+l i3lock -c 000000 --inside-color 000000 --ring-color 242624
+bindsym $mod+o exec i3lock -c 000000 --inside-color 000000 --ring-color 242624
 # background
-exec --no-startup-id feh --fill --bg-scale "$HOME/Pictures/bg/bg39.jpg"
+exec --no-startup-id feh --fill --bg-scale Pictures/bgs/milkbg.jpg
 #Screen
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 #picom
 exec --no-startup-id picom
+#polkit
+exec --no-startup-id /usr/bin/polkit-dumb-agent
 #i3 Remove Borders
 default_border pixel 1
 default_floating_border pixel 1
