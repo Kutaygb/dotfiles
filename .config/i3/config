@@ -7,6 +7,7 @@ exec --no-startup-id feh --fill --bg-scale Pictures/bgs/milkbg.jpg
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/polkit-dumb-agent
+exec --no-startup-id /usr/bin/kdeconnect-indicator
 #i3 Remove Borders
 default_border pixel 1
 default_floating_border pixel 1
@@ -15,7 +16,7 @@ hide_edge_borders smart
 gaps inner 8
 gaps outer 8
 smart_gaps on
-
+for_window [instance="origin.exe"] floating enable
 bindsym $mod+o exec i3lock -c 000000 --inside-color 000000 --ring-color 242624
 bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop"
 bindsym $mod+b exec --no-startup-id firefox

@@ -1,3 +1,4 @@
+#config files
 if [ -f ~/.servers ]; then
     source ~/.servers
 else
@@ -12,5 +13,6 @@ alias s="sudo"
 alias frb="reboot --force"
 alias hc="history -c"
 alias bye="shutdown -h now"
+alias vim="nvim"
 #other
 alias ydl='youtube-dl -f "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]" '
