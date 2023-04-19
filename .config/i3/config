@@ -1,3 +1,5 @@
+
+
 set $mod Mod4
 font pango:monospace 8
 
@@ -22,6 +24,24 @@ bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop"
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id code
 bindsym Print exec --no-startup-id flameshot gui
+
+
+# Jetbrains
+for_window [class="^com-intellij-updater-Runner$" title="^Update$"] floating enable
+for_window [instance="^sun-awt-X11-XDialogPeer$" title="^Complete Installation$"] floating enable
+
+# Unity
+for_window [class="^Unity$" title="^Starting Unity...$"] floating enable
+for_window [class="^Unity$" title="^Hold On$"] floating enable
+for_window [class="^Unity$" title="^Preparing Package$"] floating enable
+for_window [class="^Unity$" title="^Importing Package$"] floating enable
+
+# https://github.com/ValveSoftware/steam-for-linux/issues/1040
+for_window [class="^Steam$" title="^Friends List$"] floating enable
+for_window [class="^Steam$" title="Steam - Self Updater"] floating enable
+for_window [class="^Steam$" title=".* - Chat"] floating enable
+for_window [class="^Steam$" title="^Settings$"] floating enable
+for_window [class="^Steam$" title="^Screenshot Uploader"] floating enable
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
