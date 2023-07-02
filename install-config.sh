@@ -31,6 +31,9 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R mako ~/.config/
     cp -R waybar ~/.config/
     cp -R wofi ~/.config/
+    cp -R .zshrc ~/.zshrc
+    cp -R .aliases ~/.aliases
+
     
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland
