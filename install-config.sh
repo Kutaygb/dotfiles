@@ -40,3 +40,12 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     chmod +x ~/.config/hypr/xdg-portal-hyprland
     chmod +x ~/.config/waybar/scripts/waybar-wttr.py
 fi
+
+read -n1 -rep 'Would you like to copy throttled config? (y,n)' POWER
+if [[ $POWER == "Y" || $POWER == "y" ]]; then
+    sudo pacman -S --noconfirm throttled
+    
+    echo -e "Copying throttled config...\n"
+    sudo cp -R throttled /etc/throttled.conf
+    sudo systemctl enable --now throttled.service
+fi
