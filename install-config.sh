@@ -27,6 +27,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R i3 ~/.config/
     cp -R picom ~/.config/
     cp -R st ~/.config/
+    cp -R foot ~/.config/
     cp -R hypr ~/.config/
     cp -R mako ~/.config/
     cp -R waybar ~/.config/
