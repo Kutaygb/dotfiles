@@ -2,7 +2,7 @@
 if [ -f ~/.servers ]; then
     source ~/.servers
 else
-    #print "Server's not found."
+    print "Server's not found."
 fi
 
 alias confa="nvim ~/.aliases"
