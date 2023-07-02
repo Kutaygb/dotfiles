@@ -5,10 +5,10 @@ read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     paru -S --noconfirm hyprland waybar \
     swaybg swaylock-effects wofi wlogout mako thunar \
-    ttf-jetbrains-mono-nerd noto-fonts-emoji \
+    ttf-jetbrains-mono-nerd noto-fonts-emoji  \
     polkit-dumb-agent-git python-requests \
     swappy grim slurp pamixer brightnessctl gvfs \
-    bluez bluez-utils lxappearance xfce4-settings \
+    bluez bluez-utils lxappearance xfce4-settings nm-connection-editor \
     dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland
     # wlogout give's pgp key error 
     # Start the bluetooth service
@@ -19,6 +19,12 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
     # Clean out other portals
     echo -e "Cleaning out conflicting xdg portals...\n"
     paru -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+fi
+
+read -n1 -rep 'Would you like download sddm ? (y,n)' SDDM
+if [[ $SDDM == "Y" || $SDDM == "y" ]]; then
+    sudo pacman -S --noconfirm sddm
+    sudo systemctl enable --now sddm.service
 fi
 
 read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
