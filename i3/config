@@ -3,7 +3,7 @@ font pango:monospace 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --fill --bg-scale Pictures/bgs/milkbg.jpg
+exec --no-startup-id feh --fill --bg-scale /home/kutay/.config/hypr/milkbg.jpg
 exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/polkit-dumb-agent
