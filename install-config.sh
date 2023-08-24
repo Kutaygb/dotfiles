@@ -3,7 +3,7 @@ current_dir=$(pwd)
 
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    paru -S --noconfirm hyprland waybar \
+    paru -S --noconfirm hyprland waybar wlogout-git swaylock \
     swaybg swaylock-effects wofi wlogout mako thunar \
     ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-dejavu ttf-liberation noto-fonts \
     polkit-dumb-agent-git python-requests \
