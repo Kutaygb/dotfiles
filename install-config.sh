@@ -5,9 +5,9 @@ read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     paru -S --noconfirm hyprland waybar \
     swaybg swaylock-effects wofi wlogout mako thunar \
-    ttf-jetbrains-mono-nerd noto-fonts-emoji  \
+    ttf-jetbrains-mono-nerd noto-fonts-emoji ttf-dejavu ttf-liberation noto-fonts \
     polkit-dumb-agent-git python-requests \
-    swappy grim slurp pamixer brightnessctl gvfs \
+    swappy grim slurp pamixer brightnessctl gvfs foot mpv \
     bluez bluez-utils lxappearance xfce4-settings nm-connection-editor \
     dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland
     # wlogout give's pgp key error 
