@@ -3,8 +3,8 @@ font pango:monospace 8
 
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --fill --bg-scale /home/kutay/.config/hypr/milkbg.jpg
-exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 144.00
+exec --no-startup-id feh --fill --bg-scale /home/kutay/.config/hypr/bg01.jpg
+exec --no-startup-id xrandr --output HDMI-1 --mode 1920x1080 --rate 60
 exec --no-startup-id picom
 exec --no-startup-id /usr/bin/polkit-dumb-agent
 exec --no-startup-id /usr/bin/kdeconnect-indicator
@@ -22,7 +22,6 @@ bindsym $mod+d exec --no-startup-id "j4-dmenu-desktop"
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+n exec --no-startup-id code
 bindsym Print exec --no-startup-id flameshot gui
-
 
 # Jetbrains
 for_window [class="^com-intellij-updater-Runner$" title="^Update$"] floating enable
@@ -45,6 +44,10 @@ set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status:::
+
+bindsym XF86KbdBrightnessUp exec light -s sysfs/backlight/intel_backlight -A 5   #increase Kbd brightness
+bindsym XF86KbdBrightnessDown exec light -s sysfs/backlight/intel_backlight -U 5
+
 floating_modifier $mod
 
 bindsym $mod+Return exec st
