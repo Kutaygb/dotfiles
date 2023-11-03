@@ -1,1 +1,1 @@
-require("kutay.lazy")
+require("core.lazy")
