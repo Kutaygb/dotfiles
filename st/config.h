@@ -5,7 +5,6 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-/*static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";*/
 static char *font = "mono:pixelsize=13:antialias=true:autohint=true";
 static char *font2[] = {
     "Hack Nerd Font:pixelsize=15:antialias=true:autohint=true", // Powerline
@@ -13,6 +12,7 @@ static char *font2[] = {
     "Symbola:pixelsize=15:antialias=true:autohint=true" // Unicode
 };
 static int borderpx = 0;
+
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -22,7 +22,7 @@ static int borderpx = 0;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/bash";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -131,6 +131,8 @@ static const char *colorname[] = {
 };
 
 
+
+
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
@@ -153,15 +155,15 @@ static unsigned int defaultrcs = 257;
  * 7: blinking st cursor
  * 8: steady st cursor
  */
-static unsigned int cursorstyle = 5;
+static unsigned int cursorstyle = 1;
 static Rune stcursor = 0x2603; /* snowman ("☃") */
 
 /*
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 123;
-static unsigned int rows = 33;
+static unsigned int cols = 80;
+static unsigned int rows = 24;
 
 /*
  * Default colour and shape of the mouse cursor
@@ -205,6 +207,7 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (ControlMask|ShiftMask)
 
 #define ACMPL_MOD ControlMask|Mod1Mask
+
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */

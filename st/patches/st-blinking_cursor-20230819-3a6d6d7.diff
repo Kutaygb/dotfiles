@@ -1,7 +1,7 @@
-From a3cdd0753bf578cd4e6db7c6507481f3b5c38aea Mon Sep 17 00:00:00 2001
-From: Steve Ward <planet36@gmail.com>
-Date: Tue, 16 Nov 2021 14:15:06 -0500
-Subject: [PATCH] Allow blinking cursor
+From feec0e2239d81373bd2ffcc28bdcf331328391f6 Mon Sep 17 00:00:00 2001
+From: Steven Ward <planet36@gmail.com>
+Date: Sat, 19 Aug 2023 08:05:36 -0500
+Subject: [PATCH] Add different cursor styles
 
 ---
  config.def.h | 19 +++++++++++++------
@@ -9,10 +9,10 @@ Subject: [PATCH] Allow blinking cursor
  2 files changed, 48 insertions(+), 18 deletions(-)
 
 diff --git a/config.def.h b/config.def.h
-index 6f05dce..1a5fed0 100644
+index 91ab8ca..b33a2ac 100644
 --- a/config.def.h
 +++ b/config.def.h
-@@ -133,13 +133,20 @@ static unsigned int defaultcs = 256;
+@@ -135,13 +135,20 @@ unsigned int defaultcs = 256;
  static unsigned int defaultrcs = 257;
  
  /*
@@ -40,18 +40,18 @@ index 6f05dce..1a5fed0 100644
  /*
   * Default columns and rows numbers
 diff --git a/x.c b/x.c
-index 89786b8..7d2447d 100644
+index aa09997..b33a963 100644
 --- a/x.c
 +++ b/x.c
 @@ -253,6 +253,7 @@ static char *opt_name  = NULL;
  static char *opt_title = NULL;
  
- static int oldbutton = 3; /* button event on startup: 3 = release */
+ static uint buttons; /* bit field of pressed buttons */
 +static int cursorblinks = 0;
  
  void
  clipcopy(const Arg *dummy)
-@@ -1529,29 +1530,44 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
+@@ -1558,29 +1559,44 @@ xdrawcursor(int cx, int cy, Glyph g, int ox, int oy, Glyph og)
  	/* draw the new one */
  	if (IS_SET(MODE_FOCUSED)) {
  		switch (win.cursor) {
@@ -105,7 +105,7 @@ index 89786b8..7d2447d 100644
  		}
  	} else {
  		XftDrawRect(xw.draw, &drawcol,
-@@ -1708,9 +1724,12 @@ xsetmode(int set, unsigned int flags)
+@@ -1737,9 +1753,12 @@ xsetmode(int set, unsigned int flags)
  int
  xsetcursor(int cursor)
  {
@@ -119,7 +119,7 @@ index 89786b8..7d2447d 100644
  	return 0;
  }
  
-@@ -1954,6 +1973,10 @@ run(void)
+@@ -1986,6 +2005,10 @@ run(void)
  		if (FD_ISSET(ttyfd, &rfd) || xev) {
  			if (!drawing) {
  				trigger = now;
@@ -130,7 +130,7 @@ index 89786b8..7d2447d 100644
  				drawing = 1;
  			}
  			timeout = (maxlatency - TIMEDIFF(now, trigger)) \
-@@ -1964,7 +1987,7 @@ run(void)
+@@ -1996,7 +2019,7 @@ run(void)
  
  		/* idle detected or maxlatency exhausted -> draw */
  		timeout = -1;
@@ -139,7 +139,7 @@ index 89786b8..7d2447d 100644
  			timeout = blinktimeout - TIMEDIFF(now, lastblink);
  			if (timeout <= 0) {
  				if (-timeout > blinktimeout) /* start visible */
-@@ -2000,7 +2023,7 @@ main(int argc, char *argv[])
+@@ -2032,7 +2055,7 @@ main(int argc, char *argv[])
  {
  	xw.l = xw.t = 0;
  	xw.isfixed = False;
@@ -149,5 +149,5 @@ index 89786b8..7d2447d 100644
  	ARGBEGIN {
  	case 'a':
 -- 
-2.34.0
+2.41.0
 
