@@ -1,0 +1,7 @@
+start=3062.684625
+volume=48.000000
+deinterlace=auto
+af=lavfi=graph=%26%loudnorm=I=-14:TP=-3:LRA=4
+panscan=0.500000
+sid=1
+sub-delay=0.100000
